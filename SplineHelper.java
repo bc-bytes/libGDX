@@ -24,7 +24,7 @@ public final class SplineHelper
     public SplineHelper(float screenWidth, float screenHeight)
     {
         this.screenWidth = screenWidth;
-		this.screenHeight = screenHeight;
+	this.screenHeight = screenHeight;
     }
 
     public Vector2[] FlipVerticesHorizontally(Vector2[] original)
@@ -47,13 +47,13 @@ public final class SplineHelper
         return flipped;
     }
 
-	/** Method to load Path Editor XML file. XML data is assumed to be located in a folder named 'splines'.
-	 * 
-	 * @param splineFileName String containing the name of the XML file containing the path data.
-	 * @param reverse        Boolean indicating if the order of the vertices should be reversed once read.
-	 * @param flip           Set this to true if you're using a coordinate system where 0,0 is top-left.
-	 * @return               Vector2 array containing vertex data for spline.
-	 */
+    /** Method to load Path Editor XML file. XML data is assumed to be located in a folder named 'splines'.
+    * 
+    * @param splineFileName String containing the name of the XML file containing the path data.
+    * @param reverse        Boolean indicating if the order of the vertices should be reversed once read.
+    * @param flip           Set this to true if you're using a coordinate system where 0,0 is top-left.
+    * @return               Vector2 array containing vertex data for spline.
+    */
     public Vector2[] GetSplineData(String splineFileName, boolean reverse)
     {
         // read XML spline data
@@ -85,29 +85,31 @@ public final class SplineHelper
             Collections.reverse(dataset);
         }
 		
-		// set vertices for spline path
+	// set vertices for spline path
         Vector2[] data = new Vector2[dataset.size()];
         data = dataset.toArray(data);
 
         if (flip)
-		{
-			data = FlipVerticesVertically(data);
-		}
+	{
+	    data = FlipVerticesVertically(data);
+	}
 
         return data;
     }
 
-	/** Method to traverse the vertices in a CatmullRomSpline object. Note that movement speed is constant.
-	 * 
-	 * @param gameObject        A GameObject representing the object you want to traverse the spline. 
-	 *                          The GameObject should maintain the state of its own spline, so must contain the following members:
-	 *                          - Vector2 position
-	 *                          - Vector2 splineOut
-	 *							- float splineCurrent
-	 *                          - float splineSpeed
-	 * @param CatmullRomSpline  CatmullRomSpline object containing valid vertex data.
-	 * @param boolean           Boolean indicating if the object traversing the spline should point in the direction of travel.
-	 */
+    /** Method to traverse the vertices in a CatmullRomSpline object. Note that movement speed is constant. Call this method every 
+    *   frame to update the traversal.
+    * 
+    * @param gameObject        A GameObject representing the object you want to traverse the spline. 
+    *                          The GameObject should maintain the state of its own spline, so must contain the following members:
+    *                          - Vector2 position
+                               - float rotation
+    *                          - Vector2 splineOut
+    *			       - float splineCurrent
+    *                          - float splineSpeed
+    * @param CatmullRomSpline  CatmullRomSpline object containing valid vertex data.
+    * @param boolean           Boolean indicating if the object traversing the spline should point in the direction of travel.
+    */
     public void TraverseSpline(GameObject gameObject, CatmullRomSpline spline, boolean pointForward)
     {
         if (pointForward)
