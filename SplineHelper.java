@@ -102,6 +102,7 @@ public final class SplineHelper
     * @param gameObject        A GameObject representing the object you want to traverse the spline. 
     *                          The GameObject should maintain the state of its own spline, so must contain the following members:
     *                          - Vector2 position
+                               - float rotation
     *                          - Vector2 splineOut
     *			       - float splineCurrent
     *                          - float splineSpeed
