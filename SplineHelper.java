@@ -18,8 +18,8 @@ import com.badlogic.gdx.math.CatmullRomSpline;
 */
 public final class SplineHelper
 {
-	private float screenWidth;
-	private float screenHeight;
+    private float screenWidth;
+    private float screenHeight;
 	
     public SplineHelper(float screenWidth, float screenHeight)
     {
