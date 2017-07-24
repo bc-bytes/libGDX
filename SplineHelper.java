@@ -97,7 +97,8 @@ public final class SplineHelper
         return data;
     }
 
-    /** Method to traverse the vertices in a CatmullRomSpline object. Note that movement speed is constant.
+    /** Method to traverse the vertices in a CatmullRomSpline object. Note that movement speed is constant. Call this method every 
+    *   frame to update the traversal.
     * 
     * @param gameObject        A GameObject representing the object you want to traverse the spline. 
     *                          The GameObject should maintain the state of its own spline, so must contain the following members:
