@@ -26,7 +26,7 @@ class MyStar
     * 
     * @param position Vector2 containing the starting position of the star object.
     * @param velocity Vector2 containing the horizontal and vertical velocity of the star object.
-    * @param opacity  A float representing the opacity of the star object.
+    * @param opacity  Opacity of the star object.
     */
     public MyStar(Vector2 position, Vector2 velocity, float opacity)
     {
@@ -37,7 +37,7 @@ class MyStar
 }
 
 /** 
-* StarField class processed and draws a custom starfield containing scrolling stars. Starfield simulates three parallax layers.
+* StarField class processes and draws a custom starfield containing scrolling stars. Starfield simulates three parallax layers.
 * 
 * Uses snippets from https://stackoverflow.com/questions/31889513/canvas-rotating-star-field
 *
